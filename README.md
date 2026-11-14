@@ -2,9 +2,9 @@
 
 **Mathematics and Computing undergraduate at DTU** · Python · Machine Learning
 
-Most of my projects start with a question about data: what patterns are there, what looks unusual, and how can I make the results useful? I'm interested in machine learning and software engineering, especially where they meet cybersecurity.
+I'm studying Mathematics and Computing at DTU. I mostly work in Python, and I'm interested in machine learning, cybersecurity, and software engineering.
 
-Alongside these projects, I practice data structures and algorithms in C++.
+My latest project is TraceGuard, where I put an anomaly detection model into an application with a backend and an analyst dashboard. I also practice data structures and algorithms in C++.
 
 ## Projects
 
