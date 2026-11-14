@@ -24,3 +24,13 @@ I learn by building applications and exploring data. My projects cover classroom
 Writing clearer documentation, making experiments easier to reproduce, and turning learning projects into better structured applications.
 
 Explore the project READMEs for implementation details, setup instructions, and current limitations.
+
+## Contribution activity
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tanush78/tanush78/contribution-snake/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tanush78/tanush78/contribution-snake/github-contribution-grid-snake.svg">
+  <img alt="Animated snake eating the squares in Tanush's GitHub contribution graph" src="https://raw.githubusercontent.com/tanush78/tanush78/contribution-snake/github-contribution-grid-snake.svg">
+</picture>
+
+The snake follows my GitHub contribution graph and refreshes daily.
