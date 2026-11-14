@@ -1,0 +1,96 @@
+name: Update contribution snake
+
+on:
+  schedule:
+    - cron: "17 0 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/contribution-snake.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: contribution-snake
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    name: Generate animations with read-only access
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Generate light and dark animations
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      - name: Upload animations for publishing
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: contribution-snake
+          path: dist/*.svg
+          if-no-files-found: error
+          retention-days: 1
+
+  publish:
+    name: Publish animation files
+    needs: generate
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - name: Download generated animations
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: contribution-snake
+          path: animations
+
+      - name: Update animation files without force-pushing
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        with:
+          script: |
+            const fs = require('fs');
+            const { owner, repo } = context.repo;
+            const branch = 'contribution-snake';
+            try {
+              await github.rest.git.getRef({ owner, repo, ref: 'heads/' + branch });
+            } catch (error) {
+              if (error.status !== 404) throw error;
+              const { data: base } = await github.rest.git.getRef({
+                owner, repo, ref: 'heads/main'
+              });
+              await github.rest.git.createRef({
+                owner, repo, ref: 'refs/heads/' + branch, sha: base.object.sha
+              });
+            }
+            const files = [
+              'github-contribution-grid-snake.svg',
+              'github-contribution-grid-snake-dark.svg'
+            ];
+            for (const path of files) {
+              const content = fs.readFileSync('animations/' + path).toString('base64');
+              let sha;
+              try {
+                const { data } = await github.rest.repos.getContent({
+                  owner, repo, path, ref: branch
+                });
+                sha = data.sha;
+                if (data.encoding === 'base64' &&
+                    data.content.replace(/\s/g, '') === content) continue;
+              } catch (error) {
+                if (error.status !== 404) throw error;
+              }
+              await github.rest.repos.createOrUpdateFileContents({
+                owner, repo, branch, path, sha, content,
+                message: 'Update ' + path
+              });
+            }
