@@ -1,58 +1,37 @@
-<p align="center">
-  <img src="assets/header.svg" alt="Hi, I'm Tanush. Mathematics and Computing at DTU. Building in Python, thinking in mathematics." width="1100" />
-</p>
+# Hi, I'm Tanush
 
-<p align="center">
-  <a href="#about">About</a> &nbsp; · &nbsp;
-  <a href="#selected-work">Selected work</a> &nbsp; · &nbsp;
-  <a href="#working-toolkit">Toolkit</a> &nbsp; · &nbsp;
-  <a href="#contribution-activity">Contribution activity</a>
-</p>
+**Mathematics and Computing undergraduate at DTU** · Python · Machine Learning
 
-## About
+Most of my projects start with a question about data: what patterns are there, what looks unusual, and how can I make the results useful? I'm interested in machine learning and software engineering, especially where they meet cybersecurity.
 
-I'm **Tanush**, a **Mathematics and Computing undergraduate at Delhi Technological University**, working toward opportunities in Python, machine learning, and software engineering.
+Alongside these projects, I practice data structures and algorithms in C++.
 
-I enjoy connecting mathematical ideas with practical applications—especially behavioral analysis, cybersecurity, and data-driven systems. Alongside projects, I practice data structures and algorithms in C++.
+## Projects
 
-**My focus:** understand the model, build the surrounding software, and explain its limitations clearly.
+| Project | What I've worked on | Stack |
+| --- | --- | --- |
+| [TraceGuard](https://github.com/tanush78/TraceGuard) | A local security dashboard for investigating unusual account activity, with anomaly scoring, CSV imports, and saved analyst notes | Python, FastAPI, scikit-learn, SQLite |
+| [SmartCart](https://github.com/tanush78/SmartCartClustering-) | Exploring customer spending patterns with feature engineering, PCA, and clustering | pandas, scikit-learn, Seaborn |
+| [CreditWise](https://github.com/tanush78/Credit-WIse-loan-system) | Comparing loan-approval classifiers and examining how feature changes affect their results | pandas, scikit-learn, Jupyter |
+| [SnapClass](https://github.com/tanush78/SnapClass) | A course-based attendance application with face and voice recognition, enrollment, and teacher review | Python, Streamlit, Supabase |
 
-## Selected work
+If you're visiting for the first time, start with **[TraceGuard](https://github.com/tanush78/TraceGuard)**. It brings the backend, model, and interface together. The README includes screenshots, setup instructions, tests, and the limitations of its synthetic evaluation.
 
-<a href="https://github.com/tanush78/TraceGuard">
-  <img src="assets/traceguard.svg" alt="TraceGuard: a Python and FastAPI behavioral security analytics application with anomaly ranking, CSV ingestion, and persistent investigations." width="1100" />
-</a>
+## Tools I use
 
-**Start with [TraceGuard →](https://github.com/tanush78/TraceGuard)** &nbsp; [Dashboard preview](https://github.com/tanush78/TraceGuard/blob/main/docs/dashboard.png) · [Design and tradeoffs](https://github.com/tanush78/TraceGuard/blob/main/docs/INTERVIEW.md)
+- **Languages:** Python, C++, C, Java, SQL
+- **Data and ML:** NumPy, pandas, scikit-learn, Matplotlib, Seaborn, Jupyter
+- **Applications:** FastAPI, SQLite, Streamlit, Supabase, Docker
+- **Version control:** Git and GitHub
 
-A working analyst flow: import events, inspect contextual signals, record decisions, and retain an audit history. Includes API tests, browser checks, Docker setup, and a reproducible **synthetic** evaluation; it is a local prototype, not a production intrusion-detection claim.
-
-<table>
-  <tr>
-    <td width="50%"><a href="https://github.com/tanush78/Credit-WIse-loan-system"><img src="assets/creditwise.svg" alt="CreditWise: loan approval classification and model comparison with pandas and scikit-learn." width="535" /></a></td>
-    <td width="50%"><a href="https://github.com/tanush78/SmartCartClustering-"><img src="assets/smartcart.svg" alt="SmartCart: retail customer segmentation using feature engineering, PCA, K-Means, and agglomerative clustering." width="535" /></a></td>
-  </tr>
-</table>
-
-**Also exploring:** [SnapClass](https://github.com/tanush78/SnapClass), a course-based classroom attendance implementation with face/voice recognition, student enrollment, Streamlit, and Supabase. Original course creators remain acknowledged in the repository.
-
-## Working toolkit
-
-| Area | Tools used in my projects and coursework |
-| :--- | :--- |
-| **Languages** | Python · C++ · C · Java · SQL |
-| **Machine learning** | scikit-learn · XGBoost · PyTorch · NumPy · pandas |
-| **Applications & data** | FastAPI · SQLite · Streamlit · Supabase |
-| **Analysis & development** | Matplotlib · Seaborn · Jupyter · Git · Docker |
-
-**What I'm improving:** model evaluation, reproducible experiments, testable APIs, and clearer technical documentation.
+I'm working on getting better at evaluating models, testing my code, and building applications around the analysis.
 
 ## Contribution activity
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tanush78/tanush78/contribution-snake/github-contribution-grid-snake-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tanush78/tanush78/contribution-snake/github-contribution-grid-snake.svg">
-  <img alt="Animated snake eating the squares in Tanush's GitHub contribution graph" src="https://raw.githubusercontent.com/tanush78/tanush78/contribution-snake/github-contribution-grid-snake.svg" width="1100">
+  <img alt="Animated snake eating the squares in Tanush's GitHub contribution graph" src="https://raw.githubusercontent.com/tanush78/tanush78/contribution-snake/github-contribution-grid-snake.svg">
 </picture>
 
-<sub>Generated from my GitHub contribution graph and refreshed daily. Learning in public, one useful project at a time.</sub>
+The snake follows my GitHub contribution graph and refreshes daily.
